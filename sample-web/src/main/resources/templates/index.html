@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Index</title>
+<head th:replace="common/head :: head_fragment(title = 'Index', scripts = ~{::script}, links = ~{::link})">
 </head>
 <body>
-	<h1>index Thymeleaf</h1>
-	<p th:text="${message}">hello</p>
+  <div class="container">
+    <h1>index</h1>
+    <p th:text="${message}"></p>
+    <a th:href="@{/user/list}" class="btn btn-primary">ユーザー情報一覧はこちら</a>
+  </div>
 </body>
 </html>

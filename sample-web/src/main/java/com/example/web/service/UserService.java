@@ -26,4 +26,12 @@ public class UserService {
 	public List<User> searchAll() {
 		return userRepository.findAll();
 	}
+
+	/**
+	 * ユーザー情報 全検索
+	 * @return 検索結果
+	 */
+	public User searchUser(long id) {
+		return userRepository.findById(id).get();
+	}
 }

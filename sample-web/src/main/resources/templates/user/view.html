@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
   xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/head :: head_fragment(title = 'ユーザー情報詳細', scripts = ~{::script}, links = ~{::link})"></head>
+<head th:replace="common/head :: head_fragment(title = 'ユーザー情報詳細', scripts = ~{::script}, links = ~{::link})">
+</head>
 <body>
   <div class="container">
-    <h1>ユーザー情報詳細画面ダミー</h1>
-    <a href="/user/list">一覧に戻る</a>
+    <h1>ユーザー情報詳細画面</h1>
+    <a href="/user/list" class="btn btn-secondary">一覧に戻る</a>
+    </br>
+    
+    <div><label class="col-sm-2 col-form-label">ID:</label><span class="col-sm-10" th:text="${user.id}"></span></div>
+    <div><label class="col-sm-2 col-form-label">名前:</label><span class="col-sm-10" th:text="${user.name}"></span></div>
+    <div><label class="col-sm-2 col-form-label">住所:</label><span class="col-sm-10" th:text="${user.address}"></span></div>
+    <div><label class="col-sm-2 col-form-label">電話番号:</label><span class="col-sm-10" th:text="${user.phone}"></span></div>
+    <div><label class="col-sm-2 col-form-label">更新日時:</label><span class="col-sm-10" th:text="${#dates.format(user.updateDate, 'yyyy/MM/dd')}"></span></div>
+    <div><label class="col-sm-2 col-form-label">登録日時:</label><span class="col-sm-10" th:text="${#dates.format(user.createDate, 'yyyy/MM/dd')}"></span></div>
+    <div><label class="col-sm-2 col-form-label">削除日時:</label><span class="col-sm-10" th:text="${#dates.format(user.deleteDate, 'yyyy/MM/dd')}"></span></div>
+
+    <a href="/user/list" class="btn btn-secondary">一覧に戻る</a>
+
   </div>
 </body>
 </html>
