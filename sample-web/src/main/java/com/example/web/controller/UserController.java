@@ -36,7 +36,7 @@ public class UserController {
 	public String displayList(Model model) {
 		List<User> userlist = userService.searchAll();
 		model.addAttribute("userlist", userlist);
-		model.addAttribute("screenName", "ユーザー情報: 一覧");
+		model.addAttribute("screenName", "ユーザー情報: 一覧画面");
 		return "user/list";
 	}
 
@@ -49,7 +49,7 @@ public class UserController {
 	public String displayAdd(Model model) {
 		model.addAttribute("user", new User());
 		model.addAttribute("type", "add");
-		model.addAttribute("screenName", "ユーザー情報： 登録画面");
+		model.addAttribute("screenName", "ユーザー情報: 登録画面");
 		return "user/entry";
 	}
 	
@@ -84,7 +84,7 @@ public class UserController {
 	public String displayDetail(@PathVariable Long id, Model model) {
 		User user = userService.getUser(id);
 		model.addAttribute("user", user);
-		model.addAttribute("screenName", "ユーザー情報： 詳細画面");
+		model.addAttribute("screenName", "ユーザー情報: 詳細画面");
 		return "user/detail";
 	}
 

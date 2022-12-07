@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common/head :: head_fragment(title = 'Index', scripts = ~{::script}, links = ~{::link})">
 </head>
 <body>
   <div class="container">
-    <h1>index</h1>
+
+    <h1 th:text="${screenName}"></h1>
+    <br>
+
     <p th:text="${message}"></p>
+    <br>
+
     <a th:href="@{/user/list}" class="btn btn-primary">ユーザー情報一覧はこちら</a>
+
   </div>
 </body>
 </html>
