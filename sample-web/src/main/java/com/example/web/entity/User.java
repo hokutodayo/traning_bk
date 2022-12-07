@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -31,18 +34,22 @@ public class User implements Serializable {
 	/**
 	 * 名前
 	 */
+	@NotBlank(message="名前を入力してください")
+	@Size(max=50, message="名前は50文字以内で入力してください")
 	@Column(name = "name")
 	private String name;
 
 	/**
 	 * 住所
 	 */
+	@Size(max=100, message="住所は100文字以内で入力してください")
 	@Column(name = "address")
 	private String address;
 
 	/**
 	 * 電話番号
 	 */
+	@Pattern(regexp="|\\d{1,4}-\\d{1,4}-\\d{4}", message="電話番号の形式（xxxx-xxxx-xxxx）で入力してください")
 	@Column(name = "phone")
 	private String phone;
 
